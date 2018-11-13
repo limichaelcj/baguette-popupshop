@@ -1,5 +1,10 @@
 <div class="upperdiv">
-    <a onclick="showUserForm()">LOGIN / SIGNUP</a>
+    <% if user_signed_in? %>
+      <span style="margin-right:30px;">Welcome, <%= current_user.name %> </span>
+      <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <a onclick="showUserForm()" style="cursor:pointer;">LOGIN / SIGNUP</a>
+    <% end %>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
