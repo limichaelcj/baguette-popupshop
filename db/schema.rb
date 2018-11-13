@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(version: 2018_11_13_015331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.bigint "venue_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date"
-    t.boolean "booked"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-    t.index ["venue_id"], name: "index_bookings_on_venue_id"
+    t.boolean "booked", default: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+    t.index ["venue_id"], name: "index_events_on_venue_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_015331) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.boolean "is_host"
+    t.boolean "is_host", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_015331) do
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
-  add_foreign_key "bookings", "users"
-  add_foreign_key "bookings", "venues"
+  add_foreign_key "events", "users"
+  add_foreign_key "events", "venues"
   add_foreign_key "venues", "users"
 end
