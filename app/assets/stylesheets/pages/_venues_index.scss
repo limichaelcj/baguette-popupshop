@@ -1,5 +1,4 @@
 .cardsWrapper {
-    margin-top: 80px;
 }
 
 .cardsWrapper .wrapperTitle {
@@ -15,6 +14,8 @@
     width: 100%;
     margin-top: 10px;
     height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -35,7 +36,7 @@
   
   .card-carousel .my-card {
     height: 250px;
-    width: 800px;
+    width: 700px;
     position: relative;
     z-index: 1;
     -webkit-transform: scale(0.6) translateY(-2rem);

@@ -1,6 +1,14 @@
-<div class="upperdiv">
+<% if user_signed_in? %>
+<div class="upperdiv login">
+    WELCOME <%= current_user.name.upcase %>  <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+</div>
+  <% else %>
+<div class="upperdiv nologin">
     <a onclick="showUserForm()">LOGIN / SIGNUP</a>
 </div>
+  <% end %>
+
+<%= render 'shared/alerts' %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div id="userForm" class="userForm" style="display:none;">
