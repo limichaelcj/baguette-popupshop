@@ -1,3 +1,6 @@
+//= require rails-ujs
+//= require_tree .
+
 function showUserForm() {
     let x = document.getElementById('userForm');
     if (x.style.display === "none") {
@@ -7,8 +10,6 @@ function showUserForm() {
     }
  }
 
-// //= require rails-ujs
-// //= require_tree .
 // console.clear();
 
 // var MAX_LIFE = 50;

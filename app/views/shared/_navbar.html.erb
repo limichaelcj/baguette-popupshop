@@ -1,15 +1,25 @@
 <div class="upperdiv">
     <a onclick="showUserForm()">LOGIN / SIGNUP</a>
 </div>
+
+
 <div id="userForm" class="userForm"  style="display:none;">
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
 <label for="login" class="inp">
-  <input type="text" id="login" placeholder="&nbsp;">
-  <span class="label">Login</span>
+  <input name="email" type="text" id="login" placeholder="&nbsp;">
+  <span class="label">Email</span>
   <span class="border"></span>
 </label>
 <label for="password" class="inp">
-  <input type="text" id="password" placeholder="&nbsp;">
+  <input name="password" type="text" id="password" placeholder="&nbsp;">
   <span class="label">Password</span>
   <span class="border"></span>
 </label>
+
+<input type="submit">
+
+<% end %>
+
 </div>
