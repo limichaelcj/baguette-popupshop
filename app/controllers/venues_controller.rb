@@ -8,4 +8,3 @@ class VenuesController < ApplicationController
       @event = Event.new
     end
 end
-
