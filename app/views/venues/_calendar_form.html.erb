@@ -1,6 +1,6 @@
 <div id="calendar-form">
-  <%= simple_form_for :search do |f| %>
-    <%= f.input :date, required: true, label: false, input_html: { class: "datepicker", id: 'datepicker' } %>
-    <%= f.submit "Book Event", class: "btn btn-primary" %>
-  <% end %>
+  <form action="#">
+    <input type="date" id="datepicker" class="datepicker">
+  </form>
+  <button id="sweet-alert">Book Event</button>
 </div>
