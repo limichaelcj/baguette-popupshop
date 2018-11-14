@@ -8,12 +8,12 @@
 
 puts "Seeding database..."
 
-User.create(name: 'Bianca', email: 'bianca_kann@gmail.com', password: "123456", is_host: false)
-User.create(name: 'Sonja', email: 'sonjaharoldsondesigns@gmail.com', password: "123456", is_host: false)
-User.create(name: 'Luz', email: 'lmc580@nyu.edu', password: "123456", is_host: false)
+bianca = User.create(name: 'Bianca', email: 'bianca_kann@gmail.com', password: "123456", is_host: false)
+sonja = User.create(name: 'Sonja', email: 'sonjaharoldsondesigns@gmail.com', password: "123456", is_host: false)
+luz = User.create(name: 'Luz', email: 'lmc580@nyu.edu', password: "123456", is_host: false)
 
 sam = User.create(name: 'Sam', email: "sam@gmail.com", password: "123456", is_host: true)
-jordan = User.create(name: 'Jordan', email: "joradn@gmail.com", password: "123456", is_host: true)
+jordan = User.create(name: 'Jordan', email: "jordan@gmail.com", password: "123456", is_host: true)
 mike = User.create(name: 'Mike', email: "mike@gmail.com", password: "123456", is_host: true)
 
 url_boom = "https://notjustavisitor.com/wp-content/gallery/201578/dynamic/DSC00906.JPG-nggid0529495-ngg0dyn-0x0x100-00f0w010c010r110f110r010t010.JPG"
@@ -35,5 +35,9 @@ streamer = Venue.new(name: 'Streamer', address: '68 Rue de Grenelle, 75007 Paris
 streamer.description = "Yes, we do Cold Brew, we 've developed our own Nitro, we hand drip, aero press, and pull shots off custom-tuned supercharged espresso machines each and every day. We do all these quite well, but when it comes to our Meticulously drawn with just a stream of milk pitched directly onto a canvas of espresso, Free pour is the pinnacle of all barista techniques, and interestingly said 'the effect of beauty on taste'."
 streamer.remote_photo_url = url_streamer
 streamer.save
+
+Event.create(venue: boom, artist: bianca, date: "2018-11-17")
+Event.create(venue: boom, artist: sonja, date: "2018-11-21")
+Event.create(venue: boom, artist: luz, date: "2018-11-30")
 
 puts "Seeding complete."
