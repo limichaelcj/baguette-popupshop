@@ -13,5 +13,11 @@ class VenuesController < ApplicationController
      @venue = Venue.find(params[:id])
      @event = Event.new
      gon.booked_events = Event.where(venue: @venue).map(&:date)
+    # the markers array only has one marker
+     @markers = []
+     @markers << {
+       lng: @venue.longitude,
+       lat: @venue.latitude
+     }
    end
 end
