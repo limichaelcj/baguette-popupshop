@@ -8,6 +8,7 @@ class VenuesController < ApplicationController
         lat: venue.latitude
       }
    end
+  end
    def show
      @venue = Venue.find(params[:id])
      @event = Event.new
