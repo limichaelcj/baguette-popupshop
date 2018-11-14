@@ -3,5 +3,8 @@ class Venue < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :artists, through: :events, source: :user
 
+  geocoded_by :adress
+  after_validation :geocode, if: :will_save_change_to_address?
+
   mount_uploader :photo, PhotoUploader
 end
