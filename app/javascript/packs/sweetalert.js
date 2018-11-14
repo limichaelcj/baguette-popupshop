@@ -4,11 +4,17 @@ function bindSweetAlertButton() {
   const swalButton = document.getElementById('sweet-alert');
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', () => {
-      swal({
-        title: "Booking confirmed!",
-        text: `Popup event booked at Boom Cafe.`,
-        icon: "success"
-      });
+      const venue = document.getElementById('venueName').innerHTML;
+      swal(`Confirm booking for ${venue}?`, {
+        buttons: ["Cancel", true]
+      }).then((confirm) => {
+        if (confirm) {
+          swal({
+            title: "Booking confirmed!",
+            icon: "success"
+          });
+        }
+      })
     });
   }
 }

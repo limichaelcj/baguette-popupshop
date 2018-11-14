@@ -3,47 +3,26 @@
         crossorigin="anonymous">
 </script>
 
-
-<div class='cardsWrapper'>
-
   <div class='wrapperTitle'>
       SEARCH RESULT
   </div>
+
+<div class='cardsWrapper'>
+
 
 
 
   <div class='cards'>
 
-    <a href="/venues/1">
-<div class="blog-card spring-fever">
-  <div class="title-content">
-    <h3>LOVELY DOUG EVENT</h3>
-    <hr />
-    <div class="intro">MASSAGE BODY ART</div>
-  </div><!-- /.title-content -->
-  <div class="card-info">
-    Pour your Art on people body to display them arround the street.
-  </div><!-- /.card-info -->
-  <div class="utility-info">
-    <ul class="utility-list">
-      <li><i class="far fa-calendar-alt"></i> 14.11.2018</li>
-    </ul>
-  </div><!-- /.utility-info -->
-  <!-- overlays -->
-  <div class="gradient-overlay"></div>
-  <div class="color-overlay"></div>
-</div><!-- /.blog-card -->
-</a>
-
     <% @venues.each do |venue| %>
       <%= link_to venue_path(venue) do %>
-        <div class="blog-card spring-fever">
+        <div class="blog-card spring-fever" style="background-image: url(<%= venue.photo %>)">
           <div class="title-content">
             <h3><%= venue.name.capitalize %></h3>
             <hr />
             <div class="intro"><%= venue.address %></div>
           </div><!-- /.title-content -->
-          <div class="card-info"><%= venue.description %></div><!-- /.card-info -->
+          <div class="card-info"><%= venue.description.truncate_words(30) %></div><!-- /.card-info -->
           <div class="utility-info">
             <ul class="utility-list">
               <li><i class="far fa-calendar-alt"></i> <%= rand(14..30) %>.11.2018</li>

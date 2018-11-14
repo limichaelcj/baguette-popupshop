@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
     def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
     end
+
+    def show_menu?
+        true
+    end
+    
 end

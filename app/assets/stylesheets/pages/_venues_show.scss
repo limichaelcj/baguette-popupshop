@@ -5,8 +5,8 @@ html,body{
 .banner{
     margin-top: 28px;
     width: 100%;
-    background: url("https://www.the-hotel.ch/_thumbnails_/938_14_02_coffeeshop01.jpg?m=1522058915");
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
 }
 
@@ -36,7 +36,7 @@ html,body{
 }
 
 .information{
-    height: 220px;
+    height: auto;
     width: 100%;
     background: black;
     color: white;
@@ -79,14 +79,42 @@ width: 100%;
 .venueTitle{
     z-index: 1;
     color: white;
-    font-size: 20px;
-    text-transform: uppercase;
+    font-size: 14px;
+    text-align: left;
     padding: 10px;
     background: black;
     opacity: 0.7;
-    width: 300px;
+    width: auto;
+    min-width: 300px;
     vertical-align: middle;
     text-align: center;
     margin: 28px;
     position: absolute;
 }
+
+.back{
+    z-index: 1;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    padding: 10px;
+    background: black;
+    opacity: 0.7;
+    width: auto;
+    min-width: 300px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 28px;
+    margin-top: 140px;
+    position: absolute;
+}
+
+.back a{
+    text-decoration: none;
+    color: white;
+}
+
+.back:hover{
+    opacity: 1;
+}
+

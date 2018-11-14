@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
 <div class="upperdiv login">
     WELCOME <%= current_user.name.upcase %>  <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
