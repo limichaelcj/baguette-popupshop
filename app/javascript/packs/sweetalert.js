@@ -4,7 +4,7 @@ function bindSweetAlertButton() {
   const swalButton = document.getElementById('sweet-alert');
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', () => {
-      const venue = document.getElementById('venueName').innerHTMl
+      const venue = document.getElementById('venueName').innerHTML;
       swal(`Confirm booking for ${venue}?`, {
         buttons: ["Cancel", true]
       }).then((confirm) => {
