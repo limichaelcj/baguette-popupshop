@@ -16,28 +16,44 @@ sam = User.create(name: 'Sam', email: "sam@gmail.com", password: "123456", is_ho
 jordan = User.create(name: 'Jordan', email: "jordan@gmail.com", password: "123456", is_host: true)
 mike = User.create(name: 'Mike', email: "mike@gmail.com", password: "123456", is_host: true)
 
-url_boom = "https://notjustavisitor.com/wp-content/gallery/201578/dynamic/DSC00906.JPG-nggid0529495-ngg0dyn-0x0x100-00f0w010c010r110f110r010t010.JPG"
-boom = Venue.new(name: 'Boom', address: '16 Villa Gaudelet, Paris', price: 1000, host: sam)
-boom.description = "Hidden in the alley of Taipei City center south side, great ambiance and great coffee taste! reasonable price with comfortable dcor, I personally love their handmade desserts"
-boom.remote_photo_url = url_boom
-boom.save
+url_blue_bottle = "http://schemata.jp/wordpress/wp-content/uploads/02_BBCA_108_DC90142_pre_small.jpg"
+blue_bottle = Venue.new(name: 'Blue Bottle', address: '16 Villa Gaudelet, Paris', price: 1000, host: sam)
+blue_bottle.description = "Modern black and white Photography <br />We are located in the alley of Paris center south side. We have a plain white wall to display art pritns."
+blue_bottle.remote_photo_url = url_blue_bottle
+blue_bottle.save
 
-url_glitch = "http://331mrnu3ylm2k3db3s1xd1hg-wpengine.netdna-ssl.com/wp-content/uploads/2015/05/Sprudge-GlitchCoffee-HengteeLim-IMG_6127-740x416.jpg"
+url_glitch = "https://thecupandtheroad.files.wordpress.com/2016/05/glitch-coffee-1090304.jpg"
 glitch = Venue.new(name: 'Glitch', address: '106 Rue de Turenne, 75003 Paris, France', price: 2000, host: jordan)
-glitch.description = "We provide a cup of Value by strictly focusing on not only roasting and brewing, but also cultivation, purification and farm.
-Our coffee expresses the character of single origin bean by super light roasting and V60 pour over.
-As matter of fact, Japanese coffee culture has a long history of pour over serving and we would like to show great respect to the craftmanship."
+glitch.description = "Japanese Ceremics Art <br />We are part of the Japanese coffee culture, and we would like to show great respect to the craftmanship."
 glitch.remote_photo_url = url_glitch
 glitch.save
 
 url_streamer = "https://en.goodcoffee.me/cms/wp-content/uploads/streamer-nakameguro-2.jpg"
 streamer = Venue.new(name: 'Streamer', address: '68 Rue de Grenelle, 75007 Paris, France', price: 1500, host: mike)
-streamer.description = "Yes, we do Cold Brew, we 've developed our own Nitro, we hand drip, aero press, and pull shots off custom-tuned supercharged espresso machines each and every day. We do all these quite well, but when it comes to our Meticulously drawn with just a stream of milk pitched directly onto a canvas of espresso, Free pour is the pinnacle of all barista techniques, and interestingly said 'the effect of beauty on taste'."
+streamer.description = "Illustration <br />We do Cold Brew, developed our own Nitro, and we are looking for colorful and fun illustrations to display in our store."
 streamer.remote_photo_url = url_streamer
 streamer.save
 
-Event.create(venue: boom, artist: bianca, date: "2018-11-17")
-Event.create(venue: boom, artist: sonja, date: "2018-11-21")
-Event.create(venue: boom, artist: luz, date: "2018-11-30")
+url_underground = "https://suitcasemag.com/wp-content/uploads/2017/12/paris-art-underground.jpg"
+underground = Venue.new(name: 'Underground', address: "13 Rue d'Ormesson, 75004 Paris, France", price: 500, host: sam)
+underground.description = "Graffiti Art and Installation Art <br />We are a new and uprising art gallery located in the center of Paris. We want to promote young and local artists to kickstart their careers."
+underground.remote_photo_url = url_underground
+underground.save
+
+url_atelier = "https://thespaces.com/wp-content/uploads/2016/12/Parisian-factory-home-of-Franc%CC%A7ois-Arnal-.jpg"
+atelier = Venue.new(name: 'Atelier A', address: '83 Rue de la Tombe Issoire, 75014 Paris, France', price: 3000, host: jordan)
+atelier.description = " Metalwork Art <br />A former factory on Paris’ southern outskirts was the home and workplace of artist, writer and designer François Arnal until his passing in 2012."
+atelier.remote_photo_url = url_atelier
+atelier.save
+
+url_lost_bakery = "http://www.thatsmags.com/image/view/201609/lost-bakery-shanghai-1-2.jpg"
+lost_bakery = Venue.new(name: 'Lost Bakery', address: '16 Avenue René Coty, 75014 Paris, France', price: 800, host: mike)
+lost_bakery.description = "Pop Art <br />We are the locals favorite bakery shop in Paris, and we are looking for local amuetur artists to showcase their creations. We have a large, rustic wooden tables fill the space, while potted plants and stylish ceramic vases decorate the walls."
+lost_bakery.remote_photo_url = url_lost_bakery
+lost_bakery.save
+
+Event.create(venue: atelier, artist: bianca, date: "2018-11-17")
+Event.create(venue: atelier, artist: sonja, date: "2018-11-21")
+Event.create(venue: atelier, artist: luz, date: "2018-11-30")
 
 puts "Seeding complete."
