@@ -1,6 +1,6 @@
 <div class="banner">
 <div class="venueTitle">
-VENUE LOCATE IN OSAKA
+<%= @venue.name %>
 </div>
 
 
@@ -8,9 +8,15 @@ VENUE LOCATE IN OSAKA
 <%= render 'calendar_form' %>
 </div>
 
+</div>
+
+<div class="information">
+<p>We are looking for artists to showcase their arts in our cafes. We want to work alongside people who are committed to serving great coffee in their café, restaurant or office. We want to develop a relationship with our partners which grows & evolves over time. We're experienced as both coffee roasters and café retailers and can provide the advice, the training and the quality to really help make your business stand out.
+</p>
+</div>
+
 <div class="venueMap">
   <%= render 'shared/map' %>
-</div>
 </div>
 
 <!-- needs major restyling, add class:"datepicker" to input -->
