@@ -36,4 +36,9 @@ end
 
 # added gems
 gem 'devise'
-gem 'rest-client', '~>2.0','>=2.0.2' # for cloudinary rest compatibility
+
+gem 'rest-client', '~>2.0','>=2.0.2'
+# for cloudinary rest compatibility
+
+gem 'gon'
+# for sending ruby variables to javascript
