@@ -1,15 +1,43 @@
 .banner{
     margin-top: 28px;
     width: 100%;
-    background: linear-gradient(
-        rgba(0,0,0, .2), 
-        rgba(0,0,0, .2)),
-        url(https://www.asahitravelgroup.com/wp-content/uploads/2017/09/osaka-castle.jpg);
     background-size: cover;
     height: 100%;
 }
 
+.calendar{
+    z-index: 1;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+}
+
+.flatpickr-input{
+    display: none;
+}
+
+.btn-primary {
+    background: black;
+    opacity: 0.7;
+    border-radius: 0;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: black;
+    opacity: 0.9;
+    border-radius: 0;
+    border: none;
+}
+
+.venueMap{
+z-index: -1;
+height: 100%;
+width: 100%;
+}
+
 .venueTitle{
+    z-index: 1;
     color: white;
     font-size: 20px;
     text-transform: uppercase;
