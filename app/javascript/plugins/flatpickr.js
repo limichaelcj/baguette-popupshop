@@ -7,11 +7,16 @@ const year = today.getFullYear();
 const month = today.getMonth();
 const day = today.getDate();
 
-flatpickr("#datepicker", {
-  altInput: true,
-  defaultDate: "today",
-  minDate: "today",
-  maxDate: new Date(year, month + 1, day),
-  disable: gon.booked_events,
-  inline: true
-})
+const calendar = document.getElementById('datepicker');
+
+
+if (calendar) {
+  flatpickr(calendar, {
+    altInput: true,
+    defaultDate: "today",
+    minDate: "today",
+    maxDate: new Date(year, month + 1, day),
+    disable: gon.booked_events,
+    inline: true
+  });
+}
