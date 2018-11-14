@@ -2,13 +2,21 @@
     font-size: 12px;
     width: 100%;
     padding-right: 30px;
+    padding-left: 30px;
     padding-top: 12px;
     height: $navbar-height;
     display: flex;
-    justify-content: flex-end;
     color: white;
     background: rgba(0,0,0,.7);
     position: absolute;
+}
+
+.login{
+    justify-content: space-between;
+}
+
+.nologin{
+    justify-content: flex-end;
 }
 
 .userForm input[type=submit] {
@@ -42,7 +50,7 @@
     font-size: 16px;
     width: 300px;
     padding-right: 30px;
-    padding-top: 5px;
+    padding-top: 25px;
     top: 40px;
     right: 0;
     height: 300px;
