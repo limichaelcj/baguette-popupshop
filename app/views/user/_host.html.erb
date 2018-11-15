@@ -1,4 +1,4 @@
-<h1 style="color: white; margin-top: 40px;">Your Venues</h1>
+<h1 style="color: white; margin-top: 40px; margin-left: 40px;">Your Venues</h1>
 
 <div class='cards'>
   <% @user.owned_venues.each do |venue| %>
@@ -10,7 +10,7 @@
           <hr/>
           <div class="intro"><%= venue.address %></div>
         </div>
-        <div class="card-info venue-schedule-card">
+        <div class="card-info">
           <%= render 'shared/venue_schedule' %>
         </div>
         <div class="utility-info"></div>
