@@ -1,0 +1,15 @@
+<div class="schedule-list-container">
+  <div class="schedule-list">
+    <h2 class="schedule-list-title">Events</h2>
+    <ul class="schedule-list-content">
+      <% @venue.events.each do |event| %>
+        <li class="schedule-event">
+          <div class="schedule-event-info">
+            <p><%= event.date %></p>
+            <p><%= event.artist.name %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
