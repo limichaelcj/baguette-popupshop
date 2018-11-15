@@ -1,1 +1,5 @@
-<%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary' %>
+<% if @user.is_host  %>
+  <%= render 'host' %>
+<% else %>
+  <%= render 'artist' %>
+<% end %>
