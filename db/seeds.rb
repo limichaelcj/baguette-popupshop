@@ -44,13 +44,13 @@ underground.save
 
 url_atelier = "https://thespaces.com/wp-content/uploads/2016/12/Parisian-factory-home-of-Franc%CC%A7ois-Arnal-.jpg"
 atelier = Venue.new(name: 'Atelier A', address: '83 Rue de la Tombe Issoire, 75014 Paris, France', price: 3000, medium: "Sculpture", style: "Cubism", host: jordan)
-atelier.description = " Metalwork Art | A former factory on Paris’ southern outskirts was the home and workplace of artist, writer and designer François Arnal until his passing in 2012."
+atelier.description = "A former factory on Paris’ southern outskirts was the home and workplace of artist, writer and designer François Arnal until his passing in 2012."
 atelier.remote_photo_url = url_atelier
 atelier.save
 
 url_lost_bakery = "http://www.thatsmags.com/image/view/201609/lost-bakery-shanghai-1-2.jpg"
 lost_bakery = Venue.new(name: 'Lost Bakery', address: '16 Avenue René Coty, 75014 Paris, France', price: 800, medium: "Performance Art", style: "Minimalism", host: mike)
-lost_bakery.description = "Pop Art | We are the locals favorite bakery shop in Paris, and we are looking for local amuetur artists to showcase their creations. We have a large, rustic wooden tables fill the space, while potted plants and stylish ceramic vases decorate the walls."
+lost_bakery.description = "We are the locals favorite bakery shop in Paris, and we are looking for local amuetur artists to showcase their creations. We have a large, rustic wooden tables fill the space, while potted plants and stylish ceramic vases decorate the walls."
 lost_bakery.remote_photo_url = url_lost_bakery
 lost_bakery.save
 
