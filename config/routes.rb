@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'user#dashboard'
-  resources :venues, only: %i[index show] do
+  resources :venues, only: %i[index show new create] do
     resources :events, only: %i[create]
   end
 

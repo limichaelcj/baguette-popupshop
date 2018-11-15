@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   def create
     @user = current_user
     @venue = params[:venue_id]
@@ -8,7 +9,7 @@ class EventsController < ApplicationController
     @event.booked = true
     @event.save
 
-    redirect_to venue_path(@venue)
+    redirect_to dashboard_path
   end
 
   private
