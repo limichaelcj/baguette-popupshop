@@ -34,9 +34,10 @@ end
 
 # added gems
 gem 'devise'
-
+# user authentication
 gem 'rest-client', '~>2.0','>=2.0.2'
-# for cloudinary rest compatibility
-
+# cloudinary rest compatibility
 gem 'gon'
-# for sending ruby variables to javascript
+# sending ruby variables to javascript
+gem 'pundit'
+# user authorization

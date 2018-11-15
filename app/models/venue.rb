@@ -20,4 +20,9 @@ class Venue < ApplicationRecord
     [:style, 'C'],
     :name
   ]
+
+  def is_host?
+    is_host
+  end
+
 end
