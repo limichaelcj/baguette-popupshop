@@ -1,0 +1,23 @@
+<h1 style="color: white; margin-top: 40px; margin-left: 40px;">Your Venues</h1>
+
+<div class='cards'>
+  <% @user.owned_venues.each do |venue| %>
+    <% @venue = venue %>
+      <%= link_to venue_path(venue) do %>
+      <div class="blog-card spring-fever" style="background-image: url(<%= venue.photo %>)">
+        <div class="title-content">
+          <h3><%= venue.name.capitalize %></h3>
+          <hr/>
+          <div class="intro"><%= venue.address %></div>
+        </div>
+        <div class="card-info">
+          <%= render 'shared/venue_schedule' %>
+        </div>
+        <div class="utility-info"></div>
+        <!-- overlays -->
+        <div class="gradient-overlay"></div>
+        <div class="color-overlay"></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
