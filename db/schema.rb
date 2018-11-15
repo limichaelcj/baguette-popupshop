@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_143937) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "date"
+    t.date "date", null: false
     t.boolean "booked", default: false
     t.index ["user_id"], name: "index_events_on_user_id"
     t.index ["venue_id"], name: "index_events_on_venue_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_143937) do
   create_table "venues", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.integer "price"
+    t.float "price"
     t.string "photo"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_143937) do
     t.text "description"
     t.float "latitude"
     t.float "longitude"
-    t.string "medium"
-    t.string "style"
+    t.string "medium", default: "Any"
+    t.string "style", default: "Any"
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 

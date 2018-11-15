@@ -7,4 +7,8 @@ class Venue < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   mount_uploader :photo, PhotoUploader
+
+  validates :name, :address, presence: true
+  validates :price, presence: true, numericality: true
+  validates :
 end
