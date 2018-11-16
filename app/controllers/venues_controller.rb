@@ -37,7 +37,15 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :address, :description, :price)
+    params.require(:venue).permit(
+      :name,
+      :address,
+      :description,
+      :price,
+      :medium,
+      :style,
+      :photo
+    )
   end
 
   def verified_search
