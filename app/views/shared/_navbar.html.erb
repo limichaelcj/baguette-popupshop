@@ -1,12 +1,15 @@
 <% if user_signed_in? %>
   <div class="upperdiv login">
+   <div>
     WELCOME
-    <%= current_user.name.upcase %>
+    <a href="/dashboard"><%= current_user.name.upcase %></a>
+    </div>
     <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
   </div>
 <% else %>
   <div class="upperdiv login">
     <a href="/users/sign_up">BECOME A MEMBER</a>
+    <a href="/">POPUP SHOP</a>
     <a onclick="showUserForm()">ACCESS YOUR ACCOUNT</a>
   </div>
 <% end %>
