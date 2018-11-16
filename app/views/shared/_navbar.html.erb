@@ -3,6 +3,8 @@
    <div>
     WELCOME
     <a href="/dashboard"><%= current_user.name.upcase %></a>
+    </div>    <div class=searchSmall>
+      <i class="fas fa-search"></i> <input placeholder="e.g. Impact Hub, illustration, modern, Tokyo..." type="text" />
     </div>
     <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
   </div>
