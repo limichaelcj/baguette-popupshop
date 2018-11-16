@@ -14,12 +14,16 @@ class Venue < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   # pg_search venue_info = name, address, medium, style
-  pg_search_scope :search_by_venue_info, :against => [
-    [:medium, 'A'],
-    [:address, 'B'],
-    [:style, 'C'],
-    :name
-  ]
+  pg_search_scope :pg_search,
+    against: {
+      name: 'A',
+      medium: 'B',
+      style: 'C',
+      address: 'D'
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 
   def is_host?
     is_host
