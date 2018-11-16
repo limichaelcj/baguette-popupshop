@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, :remote_ip
+  before_action :authenticate_user!
 
   include ApplicationHelper
   include Pundit
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, only: %i[new create update destroy], unless: :skip_pundit?
+  after_action :verify_authorized, only: %i[new update destroy], unless: :skip_pundit?
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   def user_not_authorized

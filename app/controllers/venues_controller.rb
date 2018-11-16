@@ -14,6 +14,9 @@ class VenuesController < ApplicationController
     @event = Event.new
     gon.booked_events = Event.where(venue: @venue).map(&:date)
     gon.venue_name = @venue.name
+    gon.venue_id = @venue.id
+    gon.venue_address = @venue.address
+    gon.venue_price = @venue.price
     # the markers array only has one marker
     @markers = [{ lng: @venue.longitude, lat: @venue.latitude }]
   end

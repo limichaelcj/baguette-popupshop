@@ -1,0 +1,17 @@
+function addEventBooking(bookingHTML) {
+  const schedule = document.querySelector('.schedule-list-content');
+  schedule.insertAdjacentHTML('beforeend', bookingHTML);
+}
+
+<% if @event.errors.any? %>
+  swal({
+    title: "Oops, something went wrong.",
+    icon: "error"
+  });
+<% else %>
+  addEventBooking('<%= j render "shared/venue_schedule_entry", event: @event %>');
+  swal({
+    title: "Pop-Up Event Confirmed!",
+    icon: "success"
+  });
+<% end %>

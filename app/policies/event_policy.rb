@@ -1,7 +1,7 @@
 class EventPolicy < ApplicationPolicy
 
   def create
-    !user.is_host?
+    true
   end
 
   class Scope < Scope

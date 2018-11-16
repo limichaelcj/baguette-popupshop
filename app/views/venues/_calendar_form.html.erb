@@ -1,6 +1,7 @@
 <div id="calendar-form">
-  <form action="#">
-    <input type="date" id="datepicker" class="datepicker">
+  <form id="calendar-form-node" action="<%= @venue.id %>/events" method="post" date-remote="true">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input name="date" type="date" id="datepicker" class="datepicker">
   </form>
-  <button id="sweet-alert" class="btn btn-primary" style="margin-top: 15px">Book Event</button>
+  <button id="sweet-alert" class="btn btn-primary" style="margin-top: 15px">Book event for <%= @venue.price %></button>
 </div>
