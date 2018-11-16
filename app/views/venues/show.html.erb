@@ -4,11 +4,13 @@
 <%= @venue.address %><br>
 </div>
 
+<!--
 <a href="/venues">
 <div class="back">
 VENUES LIST
 </div>
 </a>
+-->
 
 </div>
 
@@ -32,7 +34,26 @@ VENUES LIST
 
 
 <div class="venueSchedule">
-<%= render 'shared/venue_schedule' %>
+<div class="schedule-list-container">
+  <div class="schedule-list">
+    <% unless @venue.events.empty? %>
+
+      <h2 class="schedule-list-title">Events</h2>
+      <ul class="schedule-list-content">
+        <% @venue.events.each do |event| %>
+          <li class="schedule-event">
+            <div class="schedule-event-info">
+              <p><%= event.date %></p>
+              <p><%= event.artist.name %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <h2 class="schedule-list-title">No Events</h2>
+    <% end %>
+  </div>
+</div>
 </div>
 
 <div class="calendar">

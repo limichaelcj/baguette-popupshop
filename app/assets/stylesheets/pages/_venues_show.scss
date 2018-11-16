@@ -214,6 +214,60 @@ html,body{
     opacity: 1;
 }
 
-.invisible {
-  display: none;
+.swal-modal{
+    background: black !important;
+    opacity: 0.7 !important;
+    color: white !important;
+    border: 1px solid white;
+    border-radius: 0;
+}
+
+.swal-modal .swal-text{
+    color: white;
+}
+
+.swal-button{
+    opacity: 0.7;
+    border-radius: 0;
+    background: none;
+    border: 1px solid white;
+}
+
+.swal-button--cancel{
+    color: white;
+}
+.swal-button--confirm{
+    color: white;
+}
+
+.swal-button--confirm:hover{
+    background: black;
+}
+
+.swal-icon--success__line{
+    background-color: #fff;
+}
+
+.swal-icon--success:after, .swal-icon--success:before{
+    content: none;
+}
+
+.swal-title{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.swal-icon--success__hide-corners{
+    width: 0;
+    height: 0;
+    background: none;
+}
+.swal-icon--success {
+    border-color: white;
+}
+
+.swal-button:hover{
+    background: black;
 }

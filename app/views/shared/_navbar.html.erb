@@ -3,17 +3,14 @@
    <div>
     WELCOME
     <a href="/dashboard"><%= current_user.name.upcase %></a>
-    </div>    <div class=searchSmall>
-      <i class="fas fa-search"></i> <input placeholder="e.g. Impact Hub, illustration, modern, Tokyo..." type="text" />
     </div>
+    <%= render 'shared/searchsmall' %>
     <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
   </div>
 <% else %>
   <div class="upperdiv login">
     <a href="/users/sign_up">BECOME A MEMBER</a>
-    <div class=searchSmall>
-      <i class="fas fa-search"></i> <input placeholder="e.g. Impact Hub, illustration, modern, Tokyo..." type="text" />
-    </div>
+    <%= render 'shared/searchsmall' %>
     <a onclick="showUserForm()">ACCESS YOUR ACCOUNT</a>
   </div>
 <% end %>
