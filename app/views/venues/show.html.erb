@@ -2,7 +2,6 @@
 <div class="venueTitle">
 <span id="venueName" style="text-transform:uppercase; font-size: 22px;"><%= @venue.name %></span><br>
 <%= @venue.address %><br>
-<i class="fas fa-yen-sign"></i> <%= @venue.price %> / event
 </div>
 
 <a href="/venues">
@@ -13,26 +12,34 @@ VENUES LIST
 
 </div>
 
-<div class="description">
-<%= @venue.description %>
+<div class="description_calendar">
+  <div class="description">
+    <h2>description</h2>
+    <h6>MEDIUM: <span class="tag"><%= @venue.medium %></span> STYLE: <span class="tag"><%= @venue.style %></span></h6>
+    <p><%= @venue.description %></p>
+  </div>
+
+  <div class="calendar">
+    <%= render 'calendar_form' %>
+  </div>
 </div>
 
 <div class="information">
 
-
-
-<%= render 'shared/venue_schedule' %>
-
-
-<div class="calendar">
-<%= render 'calendar_form' %>
-</div>
-
-
-</div>
-
 <div class="venueMap">
   <%= render 'shared/map' %>
 </div>
+
+
+<div class="venueSchedule">
+<%= render 'shared/venue_schedule' %>
+</div>
+
+<div class="calendar">
+</div>
+
+
+</div>
+
 
 <!-- needs major restyling, add class:"datepicker" to input -->
