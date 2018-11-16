@@ -35,19 +35,21 @@
 
 
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
   <div class="container" style="color: white;">
     <%= simple_form_for Venue.new do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
+    <%= f.input :medium %>
+    <%= f.input :style %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :photo %>
     <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
+  <span style="display: none;" class="close">&times;</span>
 </div>
 
   </div>
