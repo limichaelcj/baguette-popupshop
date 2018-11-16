@@ -11,17 +11,24 @@ VENUES LIST
 </div>
 </a>
 
+</div>
+
+<div class="description">
+<%= @venue.description %>
+</div>
+
+<div class="information">
+
+
+
+<%= render 'shared/venue_schedule' %>
+
+
 <div class="calendar">
 <%= render 'calendar_form' %>
 </div>
 
-</div>
 
-<div class="information">
-<p>
-<%= @venue.description %>
-</p>
-<%#= render 'shared/venue_schedule' %> <!-- uncomment for the venue_schedule partial -->
 </div>
 
 <div class="venueMap">

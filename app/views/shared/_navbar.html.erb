@@ -5,8 +5,9 @@
     <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
   </div>
 <% else %>
-  <div class="upperdiv nologin">
-    <a onclick="showUserForm()">LOGIN / SIGNUP</a>
+  <div class="upperdiv login">
+    <a href="/users/sign_up">BECOME A MEMBER</a>
+    <a onclick="showUserForm()">ACCESS YOUR ACCOUNT</a>
   </div>
 <% end %>
 

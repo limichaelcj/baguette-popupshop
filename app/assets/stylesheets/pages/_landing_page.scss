@@ -4,10 +4,10 @@
     padding-right: 30px;
     padding-left: 30px;
     padding-top: 12px;
-    height: $navbar-height;
+    height: 40px;
     display: flex;
     color: white;
-    background: rgba(0,0,0,.7);
+    background:#111;
     position: absolute;
 }
 
@@ -147,14 +147,6 @@ $placeholder-color:rgba(255,255,255,.5);
 	opacity:.5;
 }
 
-html,body {
-	height:100%;
-	overflow:hidden;
-}
-
-body {
-	box-shadow:inset 0 0 5em #000; 
-}
 
 .landing_page input {
 	box-sizing:border-box;
