@@ -10,6 +10,37 @@
   font-family: 'Allerta Stencil', sans-serif;
 }
 
+.wrapperCreateVenue {
+  color: white;
+  font-size: 20px;
+  width: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+.btn-create {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-create a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-create-content {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cardWrapper{
   overflow: hidden;
 }
@@ -42,12 +73,12 @@ $txt-color:   #DCE3E7;
   overflow: hidden;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
   text-align: center;
-  
+
   &.spring-fever{
     background-size: cover;
     background: cover url(https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=) no-repeat;
   }
-  
+
   .color-overlay{
     /* Rectangle 11: */
     background: rgba(0,0,0,0.4);
@@ -72,9 +103,9 @@ $txt-color:   #DCE3E7;
     left: 0;
     z-index: 15;
   }
-  
+
   &:hover{
-    
+
     .card-info{
       opacity: 1;
       bottom: 120px;
@@ -144,14 +175,14 @@ hr{
   margin: 0 0 30px 20px;
   padding: 0;
   width: 100%;
-  
+
   li{
     margin: 0 15px 0 0;
     padding: 0 0 0 22px;
     display: inline-block;
     color: $txt-color;
     font-family: 'Noto Sans', sans-serif;
-    
+
     &.comments{
       fill: white;
       background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-chat.svg) no-repeat 0 .1em;

@@ -1,6 +1,6 @@
-  <div class='wrapperTitle'>
-      YOUR VENUES
-  </div>
+<div class='wrapperTitle'>
+  YOUR VENUES
+</div>
 
 <div class='cards'>
   <% @user.owned_venues.each do |venue| %>
@@ -22,4 +22,16 @@
       </div>
     <% end %>
   <% end %>
+    <div class="blog-card btn-create">
+    <%= link_to new_venue_path do %>
+      <div class="btn-create-content">
+        <h2><i class="fas fa-plus">  Add a venue</i></h2>
+      </div>
+      <div class="utility-info"></div>
+      <div class="card-info"></div>
+      <!-- overlays -->
+      <!-- <div class="gradient-overlay"></div> -->
+      <div class="color-overlay"></div>
+    <% end %>
+    </div>
 </div>

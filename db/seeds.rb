@@ -2,9 +2,9 @@ puts "Seeding database..."
 puts "  Seeding users..."
 bianca = User.create(name: 'Bianca', email: 'bianca_kann@gmail.com', password: "123456", is_host: false)
 sonja = User.create(name: 'Sonja', email: 'sonjaharoldsondesigns@gmail.com', password: "123456", is_host: false)
-luz = User.create(name: 'Luz', email: 'lmc580@nyu.edu', password: "123456", is_host: false)
 jordan = User.create(name: 'Jordan', email: "jordan@gmail.com", password: "123456", is_host: false)
 
+luz = User.create(name: 'Luz', email: 'lmc580@nyu.edu', password: "123456", is_host: true)
 sam = User.create(name: 'Sam', email: "sam@gmail.com", password: "123456", is_host: true)
 mike = User.create(name: 'Mike', email: "mike@gmail.com", password: "123456", is_host: true)
 
@@ -40,7 +40,7 @@ streamer = Venue.new(
   price: 1500,
   medium: "Drawing",
   style: "Cubism",
-  host: mike,
+  host: luz,
   description: "We do Cold Brew, developed our own Nitro, and we are looking for colorful and fun illustrations to display in our store.",
   remote_photo_url: "https://en.goodcoffee.me/cms/wp-content/uploads/streamer-nakameguro-2.jpg"
 )
@@ -64,7 +64,7 @@ atelier = Venue.new(
   price: 3000,
   medium: "Sculpture",
   style: "Cubism",
-  host: mike,
+  host: luz,
   description: "A former factory on Paris’ southern outskirts was the home and workplace of artist, writer and designer François Arnal until his passing in 2012.",
   remote_photo_url: "https://thespaces.com/wp-content/uploads/2016/12/Parisian-factory-home-of-Franc%CC%A7ois-Arnal-.jpg"
 )
@@ -76,7 +76,7 @@ lost_bakery = Venue.new(
   price: 800,
   medium: "Performance Art",
   style: "Minimalism",
-  host: mike,
+  host: luz,
   description: "We are the locals favorite bakery shop in Paris, and we are looking for local amuetur artists to showcase their creations. We have a large, rustic wooden tables fill the space, while potted plants and stylish ceramic vases decorate the walls.",
   remote_photo_url: "http://www.thatsmags.com/image/view/201609/lost-bakery-shanghai-1-2.jpg"
 )
@@ -95,8 +95,8 @@ mike_antique = Venue.new(
 mike_antique.save
 
 puts "  Seeding events..."
-Event.create(venue: mike_antique, artist: bianca, date: "2018-11-17")
+Event.create(venue: streamer, artist: bianca, date: "2018-11-20")
+Event.create(venue: mike_antique, artist: bianca, date: "2018-11-18")
 Event.create(venue: mike_antique, artist: sonja, date: "2018-11-21")
-Event.create(venue: mike_antique, artist: luz, date: "2018-11-27")
 
 puts "Seeding complete."
