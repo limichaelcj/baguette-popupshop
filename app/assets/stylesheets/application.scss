@@ -3,8 +3,16 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 @import "config/variables";
+@import "config/animate";
+@import "config/styles";
 
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+//Landing
+@import "landing/search_block";
+@import "landing/action_block";
+@import "landing/login_block";
+@import "landing/team_block";

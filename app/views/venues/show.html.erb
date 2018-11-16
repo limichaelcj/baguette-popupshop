@@ -2,32 +2,65 @@
 <div class="venueTitle">
 <span id="venueName" style="text-transform:uppercase; font-size: 22px;"><%= @venue.name %></span><br>
 <%= @venue.address %><br>
-<i class="fas fa-yen-sign"></i> <%= @venue.price %> / event
 </div>
 
+<!--
 <a href="/venues">
 <div class="back">
 VENUES LIST
 </div>
 </a>
+-->
 
-<div class="calendar">
-<%= render 'calendar_form' %>
 </div>
 
+<div class="description_calendar">
+  <div class="description">
+    <h2>description</h2>
+    <h6>MEDIUM: <span class="tag"><%= @venue.medium %></span> STYLE: <span class="tag"><%= @venue.style %></span></h6>
+    <p><%= @venue.description %></p>
+  </div>
+
+  <div class="calendar">
+    <%= render 'calendar_form' %>
+  </div>
 </div>
 
 <div class="information">
-<p>
-<%= @venue.description %>
-</p>
-</div>
 
 <div class="venueMap">
   <%= render 'shared/map' %>
 </div>
 
+
+<div class="venueSchedule">
+<div class="schedule-list-container">
+  <div class="schedule-list">
+    <% unless @venue.events.empty? %>
+
+      <h2 class="schedule-list-title">Events</h2>
+      <ul class="schedule-list-content">
+        <% @venue.events.each do |event| %>
+          <li class="schedule-event">
+            <div class="schedule-event-info">
+              <p><%= event.date %></p>
+              <p><%= event.artist.name %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <h2 class="schedule-list-title">No Events</h2>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<div class="calendar">
+</div>
+
+
+</div>
+
+
 <!-- needs major restyling, add class:"datepicker" to input -->
-
-
-

@@ -1,18 +1,26 @@
 class ApplicationController < ActionController::Base
-    def resource_name
-        :user
-    end
-    
-    def resource
-    @resource ||= User.new
-    end
-    
-    def devise_mapping
-    @devise_mapping ||= Devise.mappings[:user]
-    end
+  before_action :authenticate_user!
 
-    def show_menu?
-        true
-    end
-    
+  include ApplicationHelper
+  include Pundit
+
+  # Pundit: white-list approach.
+  after_action :verify_authorized, only: %i[new update destroy], unless: :skip_pundit?
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(root_path)
+  end
+
+  private
+
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  # allow user geolocation by defining IP address
+  def remote_ip
+    request.remote_ip = '60.237.39.139' if request.remote_ip == '127.0.0.1'
+  end
 end

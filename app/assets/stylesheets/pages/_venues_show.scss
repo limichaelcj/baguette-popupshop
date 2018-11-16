@@ -2,12 +2,76 @@ html,body{
     overflow: scroll;
 }
 
+.description_calendar{
+    display: flex;
+    background: #111;
+    color: white;
+    padding: 40px;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.calendar .priceButton{
+    font-size: 20px;
+    opacity: 0.7;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.description h2{
+    font-family: 'Allerta Stencil', sans-serif;
+    margin-bottom: -20px;
+}
+
+.description h2:after{
+    border: none !important;
+}
+
+.description h6{
+    text-transform: none;
+
+    vertical-align: middle;
+}
+
+.description p{
+    padding-top: 30px;
+    font-size: 18px;
+    margin:0;
+}
+
+.description{
+    text-align: center;
+    width: 800px;
+    padding-top: 50px;
+    margin-right: 150px;
+    text-transform: uppercase;
+}
+
+.information{
+    height: auto;
+    width: 100%;
+    color: white;
+    height: 400px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.information .description{
+    margin: 0px;
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+}
+
 .banner{
     margin-top: 28px;
     width: 100%;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 55vh;
 }
 
 .flatpickr-calendar.inline {
@@ -15,7 +79,7 @@ html,body{
     visibility: visible;
     border-radius: 0;
     border: none;
-    background: black;
+        background: none !important;
     opacity: 0.7 !important;
 }
 
@@ -31,23 +95,18 @@ html,body{
     background: none !important;
 }
 
+.flatpickr-calendar{
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
 .flatpickr-day .selected{
     border-color: white !important;
 }
 
-.information{
-    height: auto;
-    width: 100%;
-    background: black;
-    color: white;
-    padding: 50px;
-    font-size: 20px;
-    text-transform: uppercase;
-}
-
 .calendar{
     z-index: 1;
-    position: absolute;
     right: 30px;
     top: 60px;
 }
@@ -57,23 +116,60 @@ html,body{
 }
 
 .btn-primary {
-    background: black;
     opacity: 0.7;
     border-radius: 0;
-    border: none;
+    background: none;
+    border: 1px solid white;
 }
 
 .btn-primary:hover {
-    background: black;
+    background: none;
+    border: 1px solid white;
     opacity: 0.9;
     border-radius: 0;
-    border: none;
 }
 
 .venueMap{
-z-index: -1;
-height: 100%;
-width: 100%;
+    width: 100%;
+}
+
+.venueSchedule p{
+    margin: 0;
+    color: white;
+}
+
+.venueSchedule h2{
+    font-family: 'Allerta Stencil', sans-serif;
+    margin-bottom: -20px;
+}
+
+.venueSchedule h2:after{
+    border: none !important;
+}
+
+.venueSchedule{
+    opacity: 0.7;
+    position: absolute;
+    z-index: 10;
+    background: black;
+    right: 90px;
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    width: 310px;
+}
+
+.tag{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid white;
+    opacity: 0.7;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 12px;
 }
 
 .venueTitle{
@@ -118,3 +214,108 @@ width: 100%;
     opacity: 1;
 }
 
+.swal-modal{
+    background: black !important;
+    opacity: 0.7 !important;
+    color: white !important;
+    border: 1px solid white;
+    border-radius: 0;
+}
+
+.swal-modal .swal-text{
+    color: white;
+}
+
+.swal-button{
+    opacity: 0.7;
+    border-radius: 0;
+    background: none;
+    border: 1px solid white;
+}
+
+.swal-button--cancel{
+    color: white;
+}
+.swal-button--confirm{
+    color: white;
+}
+
+.swal-button--confirm:hover{
+    background: black;
+}
+
+.swal-icon--success__line{
+    background-color: #fff;
+}
+
+.swal-icon--success:after, .swal-icon--success:before{
+    content: none;
+}
+
+.swal-title{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.swal-icon--success__hide-corners{
+    width: 0;
+    height: 0;
+    background: none;
+}
+.swal-icon--success {
+    border-color: white;
+}
+
+.swal-button:hover{
+    background: black;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #000;
+    opacity: 0.7;
+    margin-left: auto; /* 15% from the top and centered */
+    margin-right: auto; /* 15% from the top and centered */
+    margin-top: 5%;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 0;
+    width: 500px; /* Could be more or less, depending on screen size */
+}
+
+.modal-content input{
+    border-radius: 0;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

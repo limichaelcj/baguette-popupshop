@@ -1,42 +1,44 @@
-
 <% if user_signed_in? %>
-<div class="upperdiv login">
-    WELCOME <%= current_user.name.upcase %>  <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
-</div>
-  <% else %>
-<div class="upperdiv nologin">
-    <a onclick="showUserForm()">LOGIN / SIGNUP</a>
-</div>
-  <% end %>
+  <div class="upperdiv login">
+   <div>
+    WELCOME
+    <a href="/dashboard"><%= current_user.name.upcase %></a>
+    </div>
+    <%= render 'shared/searchsmall' %>
+    <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+  </div>
+<% else %>
+  <div class="upperdiv login">
+    <a href="/users/sign_up">BECOME A MEMBER</a>
+    <%= render 'shared/searchsmall' %>
+    <a onclick="showUserForm()">ACCESS YOUR ACCOUNT</a>
+  </div>
+<% end %>
 
 <%= render 'shared/alerts' %>
 
+<div id="userForm" class="userForm" style="display:none;">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div id="userForm" class="userForm" style="display:none;">
-    <label for="email" class="inp">
+  <label for="email" class="inp">
     <%= f.text_field :email,
                 id: 'email',
                 required: true,
                 input_html: { autocomplete: "email" } %>
-      <span class="label">Email</span>
-      <span class="border"></span>
-    </label>
-    <label for="password" class="inp">
+    <span class="label">Email</span>
+    <span class="border"></span>
+  </label>
+  <label for="password" class="inp">
     <%= f.password_field :password,
                 required: true,
                 id: 'password',
                 input_html: { autocomplete: "current-password" } %>
-        <span class="label">Password</span>
-        <span class="border"></span>
-    </label>
-    <input type="submit" hidden>
-
-  </div>
-
+    <span class="label">Password</span>
+    <span class="border"></span>
+  </label>
+  <input type="submit" hidden>
 <% end %>
-
 </div>
-
+</div>
 <!--
 <div id="userForm" class="userForm"  style="display:none;">
 

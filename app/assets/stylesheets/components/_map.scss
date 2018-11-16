@@ -1,0 +1,17 @@
+.map {
+  position: relative;
+  z-index: 10;
+}
+
+.map-overlay {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 200ms;
+  opacity: 0;
+  background-color: $overlay-bg;
+  pointer-events: none;
+}

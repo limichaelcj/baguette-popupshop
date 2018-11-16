@@ -10,8 +10,17 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     style: 'mapbox://styles/mapbox/light-v9'
   });
 
+  $(window).bind('mousewheel DOMMouseScroll', function(event)
+  {
+      if(event.ctrlKey == true) {
+          map['scrollZoom'].enable();
+      }
+      else {
+          map['scrollZoom'].disable();
+      }
+  });
+
   const markers = JSON.parse(mapElement.dataset.markers);
-  console.log(markers)
 
   markers.forEach((marker) => {
     new mapboxgl.Marker()
