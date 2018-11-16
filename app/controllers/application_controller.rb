@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :remote_ip
 
   include ApplicationHelper
   include Pundit
@@ -17,5 +17,10 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  # allow user geolocation by defining IP address
+  def remote_ip
+    request.remote_ip = '60.237.39.139' if request.remote_ip == '127.0.0.1'
   end
 end

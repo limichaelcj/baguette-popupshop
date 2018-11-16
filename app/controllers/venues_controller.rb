@@ -2,8 +2,8 @@ class VenuesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @venues = Venue.all
-    @venues = Venue.where.not(latitude: nil, longitude: nil)
+    @venues = verified_search
+
     @markers = @venues.map do |venue|
       { lng: venue.longitude, lat: venue.latitude }
     end
@@ -35,5 +35,13 @@ class VenuesController < ApplicationController
 
   def venue_params
     params.require(:venue).permit(:name, :address, :description, :price)
+  end
+
+  def verified_search
+    if params[:search].present?
+      Venue.pg_search(params[:search])
+    else
+      Venue.all
+    end
   end
 end
