@@ -3,5 +3,5 @@
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input name="date" type="date" id="datepicker" class="datepicker">
   </form>
-  <button id="sweet-alert" class="btn btn-primary" style="margin-top: 15px">Book event for <%= @venue.price %></button>
+  <button id="sweet-alert" class="btn btn-primary" style="margin-top: 15px">Book event for ¥<%= @venue.price.to_i %></button>
 </div>
