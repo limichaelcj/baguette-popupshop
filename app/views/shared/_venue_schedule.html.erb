@@ -1,7 +1,6 @@
 <div class="schedule-list-container">
   <div class="schedule-list">
     <% unless @venue.events.empty? %>
-      <h2 class="schedule-list-title">Events</h2>
       <ul class="schedule-list-content">
         <% @venue.events.each do |event| %>
           <li class="schedule-event">
